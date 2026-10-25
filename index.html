@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayanth Marine Services | Under Construction</title>
+  <meta name="description" content="Jayanth Marine Services - Premier maritime solutions, vessel management, technical ship services, and offshore logistics. Our new digital portal is setting sail soon.">
+  
+  <!-- Favicon using the transparent logo -->
+  <link rel="icon" type="image/png" href="assets/logo-transparent.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-sunset">
+  <!-- Ambient Audio Indicator & Controls Bar -->
+  <div class="audio-toast" id="audioToast" aria-live="polite"></div>
+
+  <!-- Background Decorative Maritime Elements -->
+  <div class="bg-radar-grid" aria-hidden="true"></div>
+  <div class="bg-vignette" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="brand-identity" title="Jayanth Marine Services">
+        <div class="logo-wrapper">
+          <img src="assets/logo-transparent.png" alt="Jayanth Marine Services Logo" class="brand-logo" id="headerLogo">
+          <div class="logo-glow"></div>
+        </div>
+        <div class="brand-text">
+          <span class="company-name">JAYANTH MARINE SERVICES</span>
+          <span class="company-tagline">Naval Excellence & Vessel Solutions</span>
+        </div>
+      </a>
+
+      <div class="header-status-pill">
+        <span class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-ripple"></span>
+        </span>
+        <span class="status-text">PORT STATUS: VESSEL FITTING OUT</span>
+      </div>
+
+      <div class="header-actions">
+        <!-- Atmosphere Theme Toggle -->
+        <div class="theme-selector" id="themeSelector" title="Switch Atmospheric Conditions">
+          <button class="theme-btn active" data-theme="theme-sunset" id="btnSunset" title="Sunset Horizon (Logo Colors)">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span class="tooltip">Sunset Horizon</span>
+          </button>
+          <button class="theme-btn" data-theme="theme-night" id="btnNight" title="Midnight Deep Sea">
+            <i class="fa-solid fa-moon"></i>
+            <span class="tooltip">Midnight Radar</span>
+          </button>
+          <button class="theme-btn" data-theme="theme-day" id="btnDay" title="Harbor Daylight">
+            <i class="fa-solid fa-sun"></i>
+            <span class="tooltip">Harbor Daylight</span>
+          </button>
+        </div>
+
+        <!-- Ambient Sound Synthesizer Button -->
+        <button class="action-pill audio-toggle" id="audioToggle" aria-label="Toggle Ocean Sound">
+          <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
+          <span class="action-pill-text" id="audioLabel">Sea Sounds</span>
+          <div class="sound-wave" id="soundWave">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </button>
+
+        <!-- Direct Contact Modal Opener -->
+        <button class="btn-primary-glass" id="openContactBtn">
+          <i class="fa-solid fa-anchor"></i>
+          <span>Direct Dispatch</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Showcase Container -->
+  <main class="main-content">
+    
+    <!-- Hero Banner Section -->
+    <section class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Under Construction Maritime Badge -->
+        <div class="construction-pill" data-aos="fade-down">
+          <div class="pill-beacon">
+            <i class="fa-solid fa-compass-drafting fa-spin-pulse"></i>
+          </div>
+          <span class="pill-label">SITE UNDER CONSTRUCTION</span>
+          <span class="pill-divider">•</span>
+          <span class="pill-meta">MAIDEN VOYAGE LAUNCHING SOON</span>
+        </div>
+
+        <h1 class="hero-title">
+          Navigating The Horizon of <br>
+          <span class="gradient-text">Maritime Excellence</span>
+        </h1>
+
+        <p class="hero-description">
+          <strong>Jayanth Marine Services</strong> is currently outfitting our flagship digital portal. 
+          From full-spectrum vessel management and offshore technical support to port logistics and marine operations, 
+          our fleet is engineered to keep your maritime enterprises moving forward smoothly.
+        </p>
+
+        <!-- Dynamic Ocean Stage with Floating Boat Centerpiece -->
+        <div class="ocean-stage-card" id="oceanStageCard">
+          
+          <!-- Ocean Theater Header Bar -->
+          <div class="stage-control-bar">
+            <div class="stage-telemetry">
+              <span class="telemetry-item"><i class="fa-solid fa-location-crosshairs"></i> POS: <strong id="shipPos">17°41.9' N, 83°17.5' E</strong></span>
+              <span class="telemetry-item"><i class="fa-solid fa-gauge-high"></i> KNOTS: <strong id="shipKnots">14.8 KTS</strong></span>
+              <span class="telemetry-item"><i class="fa-solid fa-water"></i> SEA STATE: <strong id="seaStateText">MODERATE SWELL</strong></span>
+            </div>
+
+            <div class="stage-interactive-buttons">
+              <button class="stage-btn" id="hornBtn" title="Sound the Maritime Foghorn">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Sound Horn</span>
+              </button>
+              
+              <div class="sea-control-group">
+                <label for="waveSelect"><i class="fa-solid fa-water"></i> Waves:</label>
+                <select id="waveSelect" class="stage-select">
+                  <option value="calm">Calm Harbor</option>
+                  <option value="moderate" selected>Ocean Swell</option>
+                  <option value="rough">High Seas</option>
+                </select>
+              </div>
+
+              <button class="stage-btn-boost" id="speedBoostBtn" title="Vessel Throttle Boost">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Full Ahead</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- The Floating Boat Interactive Canvas Area -->
+          <div class="ocean-canvas-wrapper" id="oceanCanvasWrapper">
+            <!-- Background Atmospheric Elements (Sun / Moon / Seagulls) -->
+            <div class="celestial-body" id="celestialBody"></div>
+            
+            <!-- Animated Flying Seagulls matching logo -->
+            <div class="seagull-flock" aria-hidden="true">
+              <div class="seagull seagull-1">
+                <svg viewBox="0 0 40 20" class="seagull-svg">
+                  <path d="M 0,10 Q 10,0 20,8 Q 30,0 40,10 Q 30,6 20,12 Q 10,6 0,10 Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="seagull seagull-2">
+                <svg viewBox="0 0 40 20" class="seagull-svg">
+                  <path d="M 0,10 Q 10,0 20,8 Q 30,0 40,10 Q 30,6 20,12 Q 10,6 0,10 Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="seagull seagull-3">
+                <svg viewBox="0 0 40 20" class="seagull-svg">
+                  <path d="M 0,10 Q 10,0 20,8 Q 30,0 40,10 Q 30,6 20,12 Q 10,6 0,10 Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Dynamic Procedural Canvas (Water, Physics, Waves, Ripples, Wake, Buoy) -->
+            <canvas id="oceanCanvas" class="ocean-canvas"></canvas>
+
+            <!-- Floating Ship Custom SVG Object with realistic physics-driven rocking/bobbing -->
+            <div class="floating-vessel-container" id="floatingVesselContainer" title="Click the vessel to sound horn & throttle forward!">
+              <!-- Ship Horn Smoke / Steam Puff Effect -->
+              <div class="steam-puff" id="steamPuff"></div>
+
+              <!-- High-Fidelity Naval Vessel modeled directly after the Jayanth Marine Services Logo -->
+              <div class="vessel-assembly" id="vesselAssembly">
+                <svg class="vessel-svg" viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <!-- Linear gradients for the hull matching the logo's deep navy & vibrant cyan -->
+                    <linearGradient id="hullGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#022b5c" />
+                      <stop offset="50%" stop-color="#05458e" />
+                      <stop offset="100%" stop-color="#0a1d37" />
+                    </linearGradient>
+
+                    <linearGradient id="cabinGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#083e7a" />
+                      <stop offset="60%" stop-color="#00a8e8" />
+                      <stop offset="100%" stop-color="#ffffff" />
+                    </linearGradient>
+
+                    <linearGradient id="orangeSpeedLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ff6a00" />
+                      <stop offset="100%" stop-color="#ffa600" />
+                    </linearGradient>
+
+                    <linearGradient id="cyanSpeedLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#00b4d8" />
+                      <stop offset="100%" stop-color="#90e0ef" />
+                    </linearGradient>
+
+                    <filter id="vesselGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00c2ff" flood-opacity="0.35"/>
+                    </filter>
+                  </defs>
+
+                  <!-- Underwater Glow Keel Reflection -->
+                  <ellipse cx="170" cy="142" rx="140" ry="8" fill="#00e5ff" opacity="0.3" filter="blur(8px)" />
+
+                  <!-- Main Hull Body (Aggressive modern angular naval clipper silhouette from logo) -->
+                  <!-- Bottom keel to bow rake -->
+                  <path d="M 28,126 
+                           C 75,127 150,126 230,123 
+                           L 326,76 
+                           C 300,90 260,116 215,124 
+                           L 28,126 Z" 
+                        fill="#021c3b" stroke="#0077b6" stroke-width="1.5" />
+
+                  <!-- Main Hull Upper Flank -->
+                  <path d="M 40,118 
+                           L 190,116 
+                           L 315,74 
+                           C 290,82 250,96 170,104 
+                           L 40,118 Z" 
+                        fill="url(#hullGradient)" stroke="#00b4d8" stroke-width="1.8" />
+
+                  <!-- Iconic Dynamic Hull Speed Strake (Cyan - directly inspired by logo) -->
+                  <path d="M 55,113 
+                           C 110,111 200,103 275,82 
+                           L 315,74 
+                           C 240,93 140,105 55,113 Z" 
+                        fill="url(#cyanSpeedLine)" filter="url(#vesselGlow)" />
+
+                  <!-- Secondary Accent Hull Strake (Vibrant Maritime Orange - from logo wave accent) -->
+                  <path d="M 75,120 
+                           C 130,118 195,114 250,99 
+                           L 245,102 
+                           C 185,116 120,121 75,120 Z" 
+                        fill="url(#orangeSpeedLine)" />
+
+                  <!-- Sleek Aerodynamic Superstructure / Pilot Bridge (Directly from logo top profile) -->
+                  <path d="M 115,100 
+                           L 138,82 
+                           L 182,78 
+                           L 225,58 
+                           C 245,50 262,56 266,62 
+                           L 242,75 
+                           L 180,84 
+                           L 125,98 Z" 
+                        fill="url(#cabinGradient)" stroke="#ffffff" stroke-width="1" />
+
+                  <!-- Bridge Windows / Navigation Glass (Tinted Deep Oceanic Cyan with reflective glare) -->
+                  <polygon points="144,82 178,79 218,63 246,60 238,68 180,78 142,85" fill="#03162b" stroke="#00f2fe" stroke-width="1.2" />
+                  <line x1="180" y1="78" x2="182" y2="84" stroke="#00f2fe" stroke-width="1.2" opacity="0.8" />
+                  <line x1="218" y1="63" x2="216" y2="72" stroke="#00f2fe" stroke-width="1.2" opacity="0.8" />
+
+                  <!-- Radar Mast & Communication Antennas -->
+                  <line x1="175" y1="78" x2="175" y2="44" stroke="#e0f2fe" stroke-width="2.2" stroke-linecap="round" />
+                  <line x1="167" y1="52" x2="183" y2="52" stroke="#ff7a00" stroke-width="2" />
+                  <!-- Rotating Radar Scanner (SVG Animation) -->
+                  <line x1="168" y1="46" x2="182" y2="46" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" class="radar-scanner" />
+                  <circle cx="175" cy="44" r="2.5" fill="#00ffcc" />
+
+                  <!-- Navigation Lights -->
+                  <!-- Starboard Bow Green Light -->
+                  <circle cx="316" cy="74" r="3.5" fill="#00ff88" class="nav-light green-light" />
+                  <!-- Masthead White Beacon -->
+                  <circle cx="175" cy="42" r="3" fill="#ffffff" class="nav-light mast-light" />
+                  <!-- Portside Amber/Orange Deck Indicator -->
+                  <circle cx="118" cy="98" r="2.5" fill="#ff9900" class="nav-light amber-light" />
+
+                  <!-- Jayanth Marine Crest / Monogram on Ship Bridge -->
+                  <text x="156" y="93" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="800" letter-spacing="1">JMS-01</text>
+                  <circle cx="149" cy="91" r="2" fill="#ff7a00" />
+                </svg>
+
+                <!-- Propeller Bubble Wash Effect -->
+                <div class="prop-wash" id="propWash"></div>
+              </div>
+            </div>
+
+            <!-- Ocean Interaction Instruction Hint -->
+            <div class="ocean-hint">
+              <span><i class="fa-solid fa-hand-pointer"></i> Move mouse to stir ocean swells • Click ship to sound horn</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Launch Readiness & Countdown Dashboard -->
+        <div class="launch-dashboard-grid">
+          
+          <!-- Countdown Box -->
+          <div class="glass-card countdown-card">
+            <div class="card-header-badge">
+              <i class="fa-regular fa-clock"></i>
+              <span>ESTIMATED MAIDEN LAUNCH</span>
+            </div>
+            
+            <div class="countdown-timer" id="countdownTimer">
+              <div class="timer-col">
+                <div class="timer-number" id="daysNum">18</div>
+                <div class="timer-label">DAYS</div>
+              </div>
+              <div class="timer-sep">:</div>
+              <div class="timer-col">
+                <div class="timer-number" id="hoursNum">06</div>
+                <div class="timer-label">HOURS</div>
+              </div>
+              <div class="timer-sep">:</div>
+              <div class="timer-col">
+                <div class="timer-number" id="minsNum">42</div>
+                <div class="timer-label">MINUTES</div>
+              </div>
+              <div class="timer-sep">:</div>
+              <div class="timer-col">
+                <div class="timer-number" id="secsNum">50</div>
+                <div class="timer-label">SECONDS</div>
+              </div>
+            </div>
+
+            <div class="countdown-footer">
+              <span class="vessel-flag"><i class="fa-solid fa-flag"></i> Flag State: International Maritime Standards</span>
+            </div>
+          </div>
+
+          <!-- Vessel Commissioning Progress Meter -->
+          <div class="glass-card commissioning-card">
+            <div class="card-header-badge">
+              <i class="fa-solid fa-sliders"></i>
+              <span>DIGITAL FLEET COMMISSIONING STATUS</span>
+            </div>
+
+            <div class="progress-meta-row">
+              <span class="progress-status-name">Portal Architecture & Maritime API</span>
+              <span class="progress-percent-val" id="progressPercent">87% READY</span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-bar-fill" id="progressBarFill" style="width: 87%;">
+                <div class="progress-bar-glow"></div>
+              </div>
+            </div>
+
+            <div class="commissioning-milestones">
+              <div class="milestone-item done">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Corporate Registration & Licensing</span>
+              </div>
+              <div class="milestone-item done">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Technical Fleet Alliances</span>
+              </div>
+              <div class="milestone-item active">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                <span>Digital Client Operations Portal</span>
+              </div>
+              <div class="milestone-item pending">
+                <i class="fa-regular fa-circle"></i>
+                <span>Official Public Ribbon Cutting</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Notify Me & Priority Notification Form -->
+        <div class="subscribe-banner-card">
+          <div class="subscribe-content">
+            <div class="subscribe-icon">
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <div class="subscribe-text">
+              <h3 class="subscribe-title">Be The First To Drop Anchor With Us</h3>
+              <p class="subscribe-subtitle">Register your vessel or enterprise email for priority dispatch alerts, service catalogs, and launch notices.</p>
+            </div>
+          </div>
+
+          <form class="subscribe-form" id="subscribeForm" novalidate>
+            <div class="input-field-group">
+              <i class="fa-solid fa-at input-icon"></i>
+              <input type="email" id="subscriberEmail" placeholder="Enter your business email address..." required autocomplete="email">
+            </div>
+            <button type="submit" class="btn-submit-action" id="subscribeSubmitBtn">
+              <span>Notify Me</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+          <div class="form-feedback" id="formFeedback" role="alert"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Preview Section (What Jayanth Marine Services delivers) -->
+    <section class="services-preview-section">
+      <div class="container">
+        
+        <div class="section-title-wrap">
+          <div class="sub-badge">WHAT WE ARE BUILDING</div>
+          <h2 class="section-heading">Core Maritime Capabilities</h2>
+          <p class="section-subheading">Comprehensive support for ships, cargo, offshore installations, and marine logistical corridors.</p>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Card 1 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-ship"></i>
+            </div>
+            <h3 class="service-title">Vessel Management & Chartering</h3>
+            <p class="service-desc">End-to-end commercial and technical ship management, commercial brokerage, charter voyage planning, and dry-dock oversight.</p>
+            <div class="service-footer">
+              <span class="service-tag">Commercial & Technical</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="service-title">Marine Engineering & Ship Repair</h3>
+            <p class="service-desc">Certified hull inspections, marine diesel overhauls, electrical automation diagnostics, propeller servicing, and safety class certifications.</p>
+            <div class="service-footer">
+              <span class="service-tag">Technical Solutions</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <h3 class="service-title">Port Agency & Cargo Logistics</h3>
+            <p class="service-desc">Swift port clearances, customs husbandry, stevedoring, bonded warehousing, and breakbulk handling across key maritime ports.</p>
+            <div class="service-footer">
+              <span class="service-tag">Harbor Logistics</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-oil-well"></i>
+            </div>
+            <h3 class="service-title">Offshore Marine Support</h3>
+            <p class="service-desc">Specialized crew transfer vessels (CTV), anchor handling, towing supply, platform support, and deepwater survey deployment.</p>
+            <div class="service-footer">
+              <span class="service-tag">Offshore Fleet</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-gas-pump"></i>
+            </div>
+            <h3 class="service-title">Bunkering & Lubes Supply</h3>
+            <p class="service-desc">High-specification marine fuels (VLSFO, MGO), high-grade marine lubricants, and freshwater provision with verified bunker certificates.</p>
+            <div class="service-footer">
+              <span class="service-tag">Fuel & Chandlery</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card" data-tilt>
+            <div class="service-card-glow"></div>
+            <div class="service-icon-box">
+              <i class="fa-solid fa-life-ring"></i>
+            </div>
+            <h3 class="service-title">24/7 Marine Salvage & Emergency</h3>
+            <p class="service-desc">Rapid-mobilization marine salvage, offshore emergency towing, diving inspections, and crisis containment on continuous standby.</p>
+            <div class="service-footer">
+              <span class="service-tag">Emergency 24/7</span>
+              <span class="service-indicator"><i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Operational Hotlines & Immediate Assistance -->
+    <section class="contact-banner-section">
+      <div class="container">
+        <div class="contact-card-box">
+          
+          <div class="contact-info-col">
+            <span class="contact-eyebrow">URGENT MARITIME REQUIREMENTS?</span>
+            <h3 class="contact-heading">Our Port & Operations Desk is Active During Construction</h3>
+            <p class="contact-text">
+              While our web interface is under development, our marine operations coordinators are on watch 
+              to discuss vessel management, port agencies, and emergency technical inquiries.
+            </p>
+
+            <div class="direct-channels-grid">
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">24/7 Operations Duty Line</span>
+                  <a href="tel:+919876543210" class="channel-val">+91 98765 43210</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">Official Marine Inquiries</span>
+                  <a href="mailto:operations@jayanthmarineservices.com" class="channel-val">operations@jayanthmarineservices.com</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="channel-details">
+                  <span class="channel-label">Port Operating Base</span>
+                  <span class="channel-val">Visakhapatnam / Chennai Marine Harbor Corridors</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-action-col">
+            <div class="quick-inquiry-box">
+              <h4 class="quick-inquiry-title">Send Direct Dispatch Note</h4>
+              <p class="quick-inquiry-sub">Directly routed to the Marine Superintendent on duty.</p>
+              
+              <button class="btn-primary-glow btn-block" id="openDirectModalBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Open Instant Dispatch Ticket</span>
+              </button>
+
+              <div class="response-pledge">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Average Marine Response Time: &lt; 45 Minutes</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Maritime Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="assets/logo-transparent.png" alt="Jayanth Marine Services Logo" class="footer-logo">
+          <span class="footer-company">JAYANTH MARINE SERVICES</span>
+        </div>
+        <p class="footer-tagline">
+          Steering maritime standards with integrity, certified technical craftsmanship, and round-the-clock port support.
+        </p>
+      </div>
+
+      <div class="footer-telemetry">
+        <div class="telemetry-badge">
+          <i class="fa-solid fa-satellite-dish"></i>
+          <span>PORT AIS: ONLINE</span>
+        </div>
+        <div class="telemetry-coords">
+          NAV GRID: 17° 41' 58" N &nbsp;|&nbsp; 83° 17' 34" E
+        </div>
+      </div>
+
+      <div class="footer-copyright-row">
+        <p>&copy; <span id="currentYear">2026</span> Jayanth Marine Services. All rights reserved. Web Platform Under Construction.</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link" id="linkPrivacy">Safety Compliance</a>
+          <span class="dot">•</span>
+          <a href="#" class="footer-link" id="linkTerms">Terms of Carriage</a>
+          <span class="dot">•</span>
+          <a href="#" class="footer-link" id="linkIMO">IMO STCW Standards</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal: Instant Maritime Dispatch Inquiry -->
+  <div class="modal-backdrop" id="inquiryModal" aria-hidden="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-icon-badge"><i class="fa-solid fa-anchor"></i></div>
+          <div>
+            <h3 class="modal-title">Direct Operations Dispatch</h3>
+            <p class="modal-subtitle">Jayanth Marine Services Duty Watch</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <form class="modal-form" id="inquiryForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientName">Full Name / Master Name *</label>
+            <input type="text" id="clientName" placeholder="Capt. / Eng. / Mr." required>
+          </div>
+          <div class="form-group">
+            <label for="clientCompany">Company / Vessel IMO (If Any)</label>
+            <input type="text" id="clientCompany" placeholder="e.g. Pacific Voyager / Shipping Line">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientEmail">Email Address *</label>
+            <input type="email" id="clientEmail" placeholder="officer@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">Contact Number *</label>
+            <input type="tel" id="clientPhone" placeholder="+91 / +Intl Contact" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="serviceType">Service Requirement *</label>
+          <select id="serviceType" required>
+            <option value="">Select Service Domain...</option>
+            <option value="vessel-management">Vessel Management & Technical Husbandry</option>
+            <option value="ship-repairs">Ship Repair & Drydock Maintenance</option>
+            <option value="port-agency">Port Agency & Cargo Logistics</option>
+            <option value="offshore-support">Offshore Support & Tugs</option>
+            <option value="bunkering">Bunkering & Marine Supply</option>
+            <option value="emergency">Emergency Towing / Salvage</option>
+            <option value="other">General Commercial Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="clientMessage">Inquiry Details / Coordinates / Port of Call *</label>
+          <textarea id="clientMessage" rows="4" placeholder="Specify your vessel details, port requirements, and urgency..." required></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn-primary-glow" id="submitInquiryBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Transmit Inquiry</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript logic -->
+  <script src="script.js"></script>
+</body>
+</html>
