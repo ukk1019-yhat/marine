@@ -1,6 +1,6 @@
 /**
- * JAYANTH MARINE SERVICES - LIGHT UNDER CONSTRUCTION EXPERIENCE
- * Procedural Wave Simulation & Smooth Buoyancy Dynamics
+ * JAYANTH MARINE SERVICES - FULL SCREEN LIGHT UNDER CONSTRUCTION
+ * Full-Width Procedural Waves & Boat Buoyancy Dynamics
  */
 
 (function () {
@@ -9,22 +9,18 @@
   const canvas = document.getElementById('waterCanvas');
   const ctx = canvas.getContext('2d');
   const boatWrapper = document.getElementById('boatWrapper');
-  const notifyForm = document.getElementById('notifyForm');
-  const emailInput = document.getElementById('emailInput');
-  const feedbackMsg = document.getElementById('feedbackMsg');
   const yearElem = document.getElementById('year');
 
   let width = 0;
   let height = 0;
   let waveTime = 0;
-  let animationId = null;
 
   // Set current year
   if (yearElem) {
     yearElem.textContent = new Date().getFullYear();
   }
 
-  // Handle high-DPI canvas resizing
+  // Handle canvas sizing across full viewport width
   function resizeCanvas() {
     const rect = canvas.getBoundingClientRect();
     width = rect.width;
@@ -39,17 +35,18 @@
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
 
-  // Wave mathematical function
+  // Procedural Trochoidal Wave Elevation Calculation
   function getWaveHeight(x, layerOffset, time) {
-    const amp = 10;
-    const freq = 0.012;
-    const speed = 0.035;
+    const amp = Math.min(height * 0.08, 14);
+    const freq = 0.0065;
+    const speed = 0.03;
 
     const wave1 = Math.sin(x * freq + time * speed + layerOffset) * amp;
-    const wave2 = Math.sin(x * (freq * 1.8) - time * (speed * 0.9) + layerOffset) * 4;
+    const wave2 = Math.sin(x * (freq * 1.9) - time * (speed * 0.8) + layerOffset) * (amp * 0.4);
     return wave1 + wave2;
   }
 
+  // Derivative calculation for realistic hull tilting / pitch
   function getWaveSlope(x, layerOffset, time) {
     const delta = 4;
     const h1 = getWaveHeight(x - delta, layerOffset, time);
@@ -62,13 +59,13 @@
     ctx.clearRect(0, 0, width, height);
     waveTime += 1;
 
-    const baselineY = height * 0.72;
+    const baselineY = height * 0.58;
 
-    // 1. Back Layer: Soft sky-blue wave
+    // 1. Back Swell (Light Soft Sky Blue)
     ctx.beginPath();
     ctx.moveTo(0, height);
-    for (let x = 0; x <= width; x += 8) {
-      const y = baselineY - 14 + getWaveHeight(x, 0.8, waveTime * 0.8);
+    for (let x = 0; x <= width; x += 12) {
+      const y = baselineY - 18 + getWaveHeight(x, 0.6, waveTime * 0.8);
       ctx.lineTo(x, y);
     }
     ctx.lineTo(width, height);
@@ -76,11 +73,11 @@
     ctx.fillStyle = '#bae6fd';
     ctx.fill();
 
-    // 2. Mid Layer: Calm light cyan wave
+    // 2. Mid Ocean Layer (Calm Light Marine Cyan)
     ctx.beginPath();
     ctx.moveTo(0, height);
-    for (let x = 0; x <= width; x += 8) {
-      const y = baselineY - 4 + getWaveHeight(x, 1.8, waveTime * 1.0);
+    for (let x = 0; x <= width; x += 10) {
+      const y = baselineY - 6 + getWaveHeight(x, 1.6, waveTime * 1.0);
       ctx.lineTo(x, y);
     }
     ctx.lineTo(width, height);
@@ -90,22 +87,22 @@
 
     // 3. Floating Boat Buoyancy & Tilt Calculation
     const boatX = width * 0.5;
-    const waveY = getWaveHeight(boatX, 2.2, waveTime * 1.0);
-    const slope = getWaveSlope(boatX, 2.2, waveTime * 1.0);
+    const waveY = getWaveHeight(boatX, 2.0, waveTime * 1.0);
+    const slope = getWaveSlope(boatX, 2.0, waveTime * 1.0);
 
     const targetY = baselineY + waveY - 26;
-    const pitchAngleDeg = Math.atan(slope) * (180 / Math.PI) * 0.7;
+    const pitchAngleDeg = Math.atan(slope) * (180 / Math.PI) * 0.75;
 
     if (boatWrapper) {
       boatWrapper.style.top = `${targetY}px`;
       boatWrapper.style.transform = `translate(-50%, -50%) rotate(${pitchAngleDeg}deg)`;
     }
 
-    // 4. Foreground Wave: Clean ocean blue
+    // 4. Foreground Main Wave (Clean Maritime Azure)
     ctx.beginPath();
     ctx.moveTo(0, height);
-    for (let x = 0; x <= width; x += 6) {
-      const y = baselineY + 10 + getWaveHeight(x, 2.8, waveTime * 1.15);
+    for (let x = 0; x <= width; x += 8) {
+      const y = baselineY + 12 + getWaveHeight(x, 2.8, waveTime * 1.15);
       ctx.lineTo(x, y);
     }
     ctx.lineTo(width, height);
@@ -113,69 +110,43 @@
     ctx.fillStyle = '#0284c7';
     ctx.fill();
 
-    // 5. Stylized Accent Curves (Directly from the Logo)
-    // Cyan speed ribbon
+    // 5. Stylized Accent Waves (Directly from Company Logo)
+    // Cyan speed line
     ctx.beginPath();
-    for (let x = 0; x <= width; x += 10) {
-      const y = baselineY + 16 + getWaveHeight(x, 2.8, waveTime * 1.15);
+    for (let x = 0; x <= width; x += 14) {
+      const y = baselineY + 18 + getWaveHeight(x, 2.8, waveTime * 1.15);
       if (x === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = '#00a3e0';
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 3.5;
     ctx.stroke();
 
-    // Warm Orange accent ribbon (Logo Wave)
+    // Solar Orange wave curl
     ctx.beginPath();
-    for (let x = width * 0.35; x <= width * 0.9; x += 8) {
-      const y = baselineY + 30 + getWaveHeight(x, 3.6, waveTime * 0.95);
-      if (x === Math.floor(width * 0.35)) ctx.moveTo(x, y);
+    for (let x = width * 0.28; x <= width * 0.88; x += 10) {
+      const y = baselineY + 32 + getWaveHeight(x, 3.6, waveTime * 0.95);
+      if (x === Math.floor(width * 0.28)) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = '#f37920';
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 3;
     ctx.stroke();
 
-    // Deep Navy accent ribbon (Logo Keel Wave)
+    // Deep Navy keel wave
     ctx.beginPath();
-    for (let x = width * 0.45; x <= width * 0.98; x += 8) {
-      const y = baselineY + 42 + getWaveHeight(x, 4.4, waveTime * 0.85);
-      if (x === Math.floor(width * 0.45)) ctx.moveTo(x, y);
+    for (let x = width * 0.42; x <= width * 0.95; x += 10) {
+      const y = baselineY + 46 + getWaveHeight(x, 4.4, waveTime * 0.85);
+      if (x === Math.floor(width * 0.42)) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = '#0a2d52';
-    ctx.lineWidth = 2.8;
+    ctx.lineWidth = 3.2;
     ctx.stroke();
 
-    animationId = requestAnimationFrame(animateWaves);
+    requestAnimationFrame(animateWaves);
   }
 
   animateWaves();
 
-  // Simple Notification Form
-  if (notifyForm) {
-    notifyForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-
-      if (!email || !email.includes('@') || !email.includes('.')) {
-        feedbackMsg.textContent = 'Please enter a valid email address.';
-        feedbackMsg.className = 'feedback-msg error';
-        emailInput.focus();
-        return;
-      }
-
-      try {
-        const list = JSON.parse(localStorage.getItem('jms_notified_emails') || '[]');
-        list.push({ email, date: new Date().toISOString() });
-        localStorage.setItem('jms_notified_emails', JSON.stringify(list));
-      } catch (err) {
-        // Fallback
-      }
-
-      feedbackMsg.textContent = '✓ Thank you! We will notify you as soon as we set sail.';
-      feedbackMsg.className = 'feedback-msg success';
-      emailInput.value = '';
-    });
-  }
 })();

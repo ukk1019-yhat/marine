@@ -1,32 +1,33 @@
 /* ==========================================================================
-   JAYANTH MARINE SERVICES - CLEAN LIGHT UNDER CONSTRUCTION
-   Minimalist, Light Palette Matching Company Logo
+   JAYANTH MARINE SERVICES - FULL SCREEN LIGHT UNDER CONSTRUCTION
+   Full Screen Immersive Layout, WhatsApp & Direct Call, Logo Color Palette
    ========================================================================== */
 
 :root {
-  /* Brand Colors from Logo */
+  /* Logo Palette Colors */
   --marine-navy: #0a2d52;
-  --marine-navy-dark: #071f38;
+  --marine-navy-dark: #061e38;
   --marine-blue: #0084c7;
   --marine-cyan: #00a3e0;
+  --marine-cyan-light: #7dd3fc;
+  --marine-cyan-pale: #bae6fd;
   --marine-orange: #f37920;
-  --marine-orange-hover: #e0650d;
+  --marine-orange-hover: #e0660e;
   
-  /* Light Neutral Palette */
-  --bg-page: #f5f8fc;
-  --card-white: #ffffff;
-  --border-light: #e2eaf2;
-  --border-focus: #00a3e0;
+  /* WhatsApp Green */
+  --whatsapp-green: #25d366;
+  --whatsapp-hover: #1ebd5a;
+
+  /* Light Theme Neutrals */
+  --bg-page: #f6f9fc;
   --text-dark: #0a2d52;
-  --text-body: #4a5d73;
-  --text-muted: #7e91a6;
-  
-  /* Fonts */
+  --text-body: #475a70;
+  --text-muted: #788d9f;
+  --border-subtle: #e2eaf2;
+
+  /* Typography */
   --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Shadows */
-  --shadow-card: 0 16px 48px rgba(10, 45, 82, 0.07), 0 2px 8px rgba(10, 45, 82, 0.04);
 }
 
 /* Reset & Base */
@@ -36,154 +37,43 @@
   padding: 0;
 }
 
-html {
-  font-size: 16px;
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  background-image: radial-gradient(circle at 50% 10%, #ffffff 0%, #f3f7fb 50%, #e8f1f9 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-body {
-  font-family: var(--font-body);
-  background-color: var(--bg-page);
-  background-image: 
-    radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f6fc 60%, #e8f0f8 100%);
-  color: var(--text-body);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1.25rem;
-  line-height: 1.6;
-}
-
-/* Central Card */
-.page-container {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.content-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
-  border-radius: 24px;
-  padding: 3rem 2.5rem 2rem;
-  box-shadow: var(--shadow-card);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Brand Section */
-.brand-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.25rem;
-}
-
-.main-logo {
-  max-width: 130px;
-  height: auto;
-  margin-bottom: 0.85rem;
-  transition: transform 0.3s ease;
-}
-
-.main-logo:hover {
-  transform: scale(1.04);
-}
-
-.company-title {
-  font-family: var(--font-heading);
-  font-size: 1.55rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--marine-navy);
-  line-height: 1.2;
-}
-
-/* Under Construction Status Pill */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.35rem 1rem;
-  background: #fff5ed;
-  border: 1px solid #fcd9bc;
-  border-radius: 9999px;
-  margin-bottom: 1.25rem;
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--marine-orange);
-  border-radius: 50%;
-  animation: pulseDot 2s infinite ease-in-out;
-}
-
-@keyframes pulseDot {
-  0%, 100% { transform: scale(0.9); opacity: 0.7; }
-  50% { transform: scale(1.3); opacity: 1; }
-}
-
-.status-text {
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--marine-orange);
-}
-
-/* Headings */
-.main-heading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-  font-weight: 700;
-  color: var(--marine-navy-dark);
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  max-width: 580px;
-}
-
-.main-description {
-  font-size: 0.95rem;
-  color: var(--text-body);
-  max-width: 540px;
-  margin-bottom: 1.85rem;
-  line-height: 1.65;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* --------------------------------------------------------------------------
-   The Floating Boat Stage (Clean Light Ocean & Sky)
+   Sky Backdrop (Logo Arc Accents & Seagulls)
    -------------------------------------------------------------------------- */
-.boat-stage {
-  position: relative;
-  width: 100%;
-  max-width: 620px;
-  height: 220px;
-  background: linear-gradient(180deg, #f8fbff 0%, #edf5fc 70%, #e1effa 100%);
-  border: 1px solid var(--border-light);
-  border-radius: 18px;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  user-select: none;
-}
-
-/* Sky Elements (Solar arc, cyan arc, soaring seagull from logo) */
-.sky-elements {
-  position: absolute;
+.sky-backdrop {
+  position: fixed;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .solar-arc {
   position: absolute;
-  top: -70px;
+  top: -140px;
   left: 50%;
   transform: translateX(-50%);
-  width: 380px;
-  height: 240px;
-  border: 3.5px solid transparent;
+  width: 720px;
+  height: 440px;
+  border: 4px solid transparent;
   border-top-color: var(--marine-orange);
   border-radius: 50%;
   opacity: 0.85;
@@ -191,50 +81,265 @@ body {
 
 .cyan-arc {
   position: absolute;
-  top: -45px;
+  top: -100px;
   left: 48%;
   transform: translateX(-50%);
-  width: 320px;
-  height: 200px;
-  border: 2.5px solid transparent;
+  width: 620px;
+  height: 380px;
+  border: 3px solid transparent;
   border-top-color: var(--marine-cyan);
   border-left-color: var(--marine-cyan);
   border-radius: 50%;
   opacity: 0.75;
 }
 
-.seagull-bird {
+.seagull-group {
   position: absolute;
-  top: 36px;
-  left: 47%;
-  width: 24px;
-  height: 14px;
-  animation: seagullFloat 6s ease-in-out infinite alternate;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 100px;
 }
 
-@keyframes seagullFloat {
+.seagull {
+  position: absolute;
+  animation: seagullGlide 8s ease-in-out infinite alternate;
+}
+
+.bird-1 {
+  width: 32px;
+  height: 18px;
+  top: 10px;
+  left: 45%;
+}
+
+.bird-2 {
+  width: 22px;
+  height: 13px;
+  top: 40px;
+  left: 60%;
+  opacity: 0.7;
+  animation-duration: 11s;
+}
+
+@keyframes seagullGlide {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(25px, -6px) scale(0.95); }
+  50% { transform: translate(30px, -8px) scale(0.96); }
+  100% { transform: translate(60px, 4px) scale(1); }
 }
 
-/* Water Canvas */
+/* --------------------------------------------------------------------------
+   Full Screen Layout Container (No Box)
+   -------------------------------------------------------------------------- */
+.fullscreen-container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Brand & Title
+   -------------------------------------------------------------------------- */
+.hero-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0 1rem;
+}
+
+.brand-logo {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 0.85rem;
+  filter: drop-shadow(0 4px 16px rgba(10, 45, 82, 0.08));
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.company-name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--marine-navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  background: #fff4ea;
+  border: 1px solid #fedbc0;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(243, 121, 32, 0.1);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--marine-orange);
+  border-radius: 50%;
+  animation: pulseBeacon 2s infinite ease-in-out;
+}
+
+@keyframes pulseBeacon {
+  0%, 100% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+
+.status-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--marine-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Text Block & Direct Contacts
+   -------------------------------------------------------------------------- */
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  color: var(--marine-navy-dark);
+  margin-bottom: 0.65rem;
+  line-height: 1.25;
+}
+
+.main-subtext {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: 1.85rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Contact Actions (WhatsApp & Direct Phone) */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--whatsapp-green);
+  color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
+  font-size: 1.55rem;
+  transition: all 0.25s ease;
+}
+
+.btn-whatsapp:hover {
+  background: var(--whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.38);
+}
+
+.btn-phone-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.75rem;
+  background: var(--marine-navy);
+  color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(10, 45, 82, 0.2);
+  font-size: 1.35rem;
+  transition: all 0.25s ease;
+}
+
+.btn-phone-call:hover {
+  background: var(--marine-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 132, 199, 0.3);
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.btn-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  line-height: 1.1;
+}
+
+.btn-phone {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   Full-Width Ocean & Floating Boat Section
+   -------------------------------------------------------------------------- */
+.ocean-container {
+  position: relative;
+  width: 100vw;
+  height: clamp(230px, 32vh, 340px);
+  overflow: hidden;
+  margin-top: auto;
+  user-select: none;
+}
+
 .water-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Boat Assembly */
+/* Floating Naval Vessel */
 .boat-wrapper {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 240px;
-  height: 115px;
-  z-index: 3;
+  width: clamp(230px, 28vw, 320px);
+  height: auto;
+  aspect-ratio: 340 / 160;
+  z-index: 2;
   pointer-events: none;
   transition: transform 0.1s ease-out;
 }
@@ -243,182 +348,78 @@ body {
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 6px 12px rgba(10, 45, 82, 0.15));
+  filter: drop-shadow(0 8px 18px rgba(10, 45, 82, 0.22));
 }
 
 .boat-light {
-  animation: lightBlink 2s infinite ease-in-out;
+  animation: navLightFlash 1.8s infinite ease-in-out;
 }
 
-@keyframes lightBlink {
-  0%, 100% { opacity: 0.4; }
+@keyframes navLightFlash {
+  0%, 100% { opacity: 0.35; }
   50% { opacity: 1; }
 }
 
 /* --------------------------------------------------------------------------
-   Simple Notification Form
+   Page Footer
    -------------------------------------------------------------------------- */
-.notify-form {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  max-width: 460px;
-  margin-bottom: 0.75rem;
-}
-
-.input-wrap {
-  position: relative;
-  flex: 1;
-}
-
-.input-icon {
+.page-footer {
   position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.notify-form input {
-  width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.5rem;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  color: var(--text-dark);
-  font-size: 0.88rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.notify-form input:focus {
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.12);
-}
-
-.notify-form input::placeholder {
-  color: var(--text-muted);
-}
-
-.notify-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.4rem;
-  background: var(--marine-orange);
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
-  transition: background-color 0.2s, transform 0.1s;
-}
-
-.notify-btn:hover {
-  background: var(--marine-orange-hover);
-}
-
-.notify-btn:active {
-  transform: translateY(1px);
-}
-
-.feedback-msg {
-  font-size: 0.82rem;
-  margin-bottom: 1.5rem;
-  min-height: 1.2rem;
-}
-
-.feedback-msg.success {
-  color: #0d8a57;
-  font-weight: 500;
-}
-
-.feedback-msg.error {
-  color: #d9383a;
-  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------
-   Contact Strip & Footer
+   Responsive Design
    -------------------------------------------------------------------------- */
-.contact-strip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  font-size: 0.84rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-light);
-  padding-top: 1.25rem;
-  width: 100%;
-  margin-bottom: 1.25rem;
-}
-
-.contact-label {
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.contact-link {
-  color: var(--marine-blue);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: color 0.2s;
-}
-
-.contact-link:hover {
-  color: var(--marine-orange);
-}
-
-.sep {
-  opacity: 0.4;
-}
-
-.footer {
-  font-size: 0.76rem;
-  color: var(--text-muted);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .content-card {
-    padding: 2rem 1.25rem 1.5rem;
+@media (max-width: 680px) {
+  .fullscreen-container {
+    padding-top: 1.5rem;
   }
 
-  .company-title {
-    font-size: 1.3rem;
+  .brand-logo {
+    max-width: 110px;
   }
 
-  .boat-stage {
-    height: 180px;
+  .company-name {
+    font-size: 1.45rem;
   }
 
-  .boat-wrapper {
-    width: 190px;
-    height: 90px;
+  .main-title {
+    font-size: 1.6rem;
   }
 
-  .notify-form {
+  .main-subtext {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-actions {
     flex-direction: column;
-  }
-
-  .notify-btn {
+    gap: 0.85rem;
     width: 100%;
   }
 
-  .contact-strip {
-    flex-direction: column;
-    gap: 0.4rem;
+  .btn-whatsapp,
+  .btn-phone-call {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.75rem 1.4rem;
   }
 
-  .contact-strip .sep {
-    display: none;
+  .ocean-container {
+    height: 220px;
+  }
+
+  .boat-wrapper {
+    width: 210px;
   }
 }

@@ -4,152 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jayanth Marine Services | Under Construction</title>
-  <meta name="description" content="Jayanth Marine Services official website is under construction. Launching soon.">
+  <meta name="description" content="Jayanth Marine Services official website is under construction. Contact us via WhatsApp or Phone at +91 95733 74799.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-transparent.png">
   
-  <!-- Clean Modern Google Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Clean Light Stylesheet -->
+  <!-- Full Screen Light Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="page-container">
-    <div class="content-card">
-      
-      <!-- Company Logo & Brand -->
-      <div class="brand-section">
-        <img src="assets/logo-transparent.png" alt="Jayanth Marine Services Logo" class="main-logo">
-        <h1 class="company-title">JAYANTH MARINE SERVICES</h1>
-      </div>
+  <!-- Full Screen Sky Background Elements -->
+  <div class="sky-backdrop" aria-hidden="true">
+    <div class="solar-arc"></div>
+    <div class="cyan-arc"></div>
+    <div class="seagull-group">
+      <svg class="seagull bird-1" viewBox="0 0 40 22">
+        <path d="M 0,11 Q 10,0 20,8 Q 30,0 40,11 Q 30,7 20,13 Q 10,7 0,11 Z" fill="#0099cc"/>
+      </svg>
+      <svg class="seagull bird-2" viewBox="0 0 40 22">
+        <path d="M 0,11 Q 10,0 20,8 Q 30,0 40,11 Q 30,7 20,13 Q 10,7 0,11 Z" fill="#00a3e0"/>
+      </svg>
+    </div>
+  </div>
 
-      <!-- Under Construction Pill -->
+  <!-- Full Screen Layout Content -->
+  <div class="fullscreen-container">
+    
+    <!-- Header / Brand Section -->
+    <header class="hero-brand">
+      <img src="assets/logo-transparent.png" alt="Jayanth Marine Services Logo" class="brand-logo">
+      <h1 class="company-name">JAYANTH MARINE SERVICES</h1>
+      
+      <!-- Under Construction Badge -->
       <div class="status-badge">
         <span class="status-dot"></span>
         <span class="status-text">UNDER CONSTRUCTION</span>
       </div>
+    </header>
 
-      <!-- Main Message -->
-      <h2 class="main-heading">Our New Website is Setting Sail Soon</h2>
-      <p class="main-description">
-        We are currently outfitting our new digital platform to provide you with seamless maritime solutions and vessel services. We will be launching shortly.
+    <!-- Message & WhatsApp / Direct Phone Contact -->
+    <main class="hero-text-block">
+      <h2 class="main-title">Our New Website is Setting Sail Soon</h2>
+      <p class="main-subtext">
+        We are outfitting our new digital platform for complete maritime solutions. For urgent services, vessel assistance, or business inquiries, connect with us directly:
       </p>
 
-      <!-- The Unique Floating Boat Scene (Matching the Logo) -->
-      <div class="boat-stage" id="boatStage" title="Jayanth Marine Services Vessel">
-        <!-- Sun Arc & Soaring Seagull from logo -->
-        <div class="sky-elements" aria-hidden="true">
-          <div class="solar-arc"></div>
-          <div class="cyan-arc"></div>
-          <svg class="seagull-bird" viewBox="0 0 40 22">
-            <path d="M 0,11 Q 10,0 20,8 Q 30,0 40,11 Q 30,7 20,13 Q 10,7 0,11 Z" fill="#0099cc"/>
-          </svg>
-        </div>
-
-        <!-- Procedural Water Waves Canvas -->
-        <canvas id="waterCanvas" class="water-canvas"></canvas>
-
-        <!-- Floating Boat Assembly -->
-        <div class="boat-wrapper" id="boatWrapper">
-          <svg class="boat-svg" viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="hullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0a2d52" />
-                <stop offset="50%" stop-color="#144b82" />
-                <stop offset="100%" stop-color="#0e3661" />
-              </linearGradient>
-
-              <linearGradient id="cabinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#0e3a6c" />
-                <stop offset="65%" stop-color="#0094d4" />
-                <stop offset="100%" stop-color="#ffffff" />
-              </linearGradient>
-
-              <linearGradient id="cyanStrake" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#00a3e0" />
-                <stop offset="100%" stop-color="#40c4ff" />
-              </linearGradient>
-
-              <linearGradient id="orangeStrake" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#f37920" />
-                <stop offset="100%" stop-color="#fba04b" />
-              </linearGradient>
-            </defs>
-
-            <!-- Bottom Keel & Hull silhouette -->
-            <path d="M 28,126 C 75,127 150,126 230,123 L 326,76 C 300,90 260,116 215,124 L 28,126 Z" 
-                  fill="#082240" />
-
-            <!-- Main Hull -->
-            <path d="M 40,118 L 190,116 L 315,74 C 290,82 250,96 170,104 L 40,118 Z" 
-                  fill="url(#hullGrad)" />
-
-            <!-- Cyan Speed Line (From Logo) -->
-            <path d="M 55,113 C 110,111 200,103 275,82 L 315,74 C 240,93 140,105 55,113 Z" 
-                  fill="url(#cyanStrake)" />
-
-            <!-- Orange Accent Strake (From Logo) -->
-            <path d="M 75,120 C 130,118 195,114 250,99 L 245,102 C 185,116 120,121 75,120 Z" 
-                  fill="url(#orangeStrake)" />
-
-            <!-- Sleek Superstructure / Bridge -->
-            <path d="M 115,100 L 138,82 L 182,78 L 225,58 C 245,50 262,56 266,62 L 242,75 L 180,84 L 125,98 Z" 
-                  fill="url(#cabinGrad)" stroke="#ffffff" stroke-width="0.8" />
-
-            <!-- Bridge Windows -->
-            <polygon points="144,82 178,79 218,63 246,60 238,68 180,78 142,85" fill="#082342" stroke="#00b4d8" stroke-width="1" />
-
-            <!-- Radar Mast -->
-            <line x1="175" y1="78" x2="175" y2="46" stroke="#0a2d52" stroke-width="2" stroke-linecap="round" />
-            <line x1="168" y1="54" x2="182" y2="54" stroke="#f37920" stroke-width="1.8" />
-            <circle cx="175" cy="46" r="2.2" fill="#00a3e0" />
-
-            <!-- Subtly Blinking Navigation Lights -->
-            <circle cx="316" cy="74" r="3" fill="#00b074" class="boat-light" />
-            <circle cx="175" cy="44" r="2.5" fill="#f37920" class="boat-light" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- Simple Notify Form -->
-      <form class="notify-form" id="notifyForm" novalidate>
-        <div class="input-wrap">
-          <i class="fa-regular fa-envelope input-icon"></i>
-          <input type="email" id="emailInput" placeholder="Enter your email for launch updates..." required autocomplete="email">
-        </div>
-        <button type="submit" class="notify-btn" id="notifyBtn">
-          <span>Notify Me</span>
-        </button>
-      </form>
-      <div class="feedback-msg" id="feedbackMsg"></div>
-
-      <!-- Clean Contact Information -->
-      <div class="contact-strip">
-        <span class="contact-label">Direct Inquiries:</span>
-        <a href="mailto:operations@jayanthmarineservices.com" class="contact-link">
-          <i class="fa-regular fa-envelope"></i> operations@jayanthmarineservices.com
+      <!-- Direct WhatsApp and Call Actions -->
+      <div class="contact-actions">
+        <!-- Direct WhatsApp Button -->
+        <a href="https://wa.me/919573374799?text=Hello%20Jayanth%20Marine%20Services,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+           class="btn-whatsapp" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           title="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="btn-text">
+            <span class="btn-sub">Direct WhatsApp</span>
+            <span class="btn-phone">+91 95733 74799</span>
+          </span>
         </a>
-        <span class="sep">•</span>
-        <a href="tel:+919876543210" class="contact-link">
-          <i class="fa-solid fa-phone"></i> +91 98765 43210
+
+        <!-- Direct Phone Call Button -->
+        <a href="tel:+919573374799" 
+           class="btn-phone-call" 
+           title="Call Jayanth Marine Services">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span class="btn-text">
+            <span class="btn-sub">Direct Call</span>
+            <span class="btn-phone">+91 95733 74799</span>
+          </span>
         </a>
       </div>
+    </main>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <p>&copy; <span id="year">2026</span> Jayanth Marine Services. All rights reserved.</p>
-      </footer>
+    <!-- Full-Width Floating Boat & Ocean Section -->
+    <div class="ocean-container" id="oceanContainer">
+      <!-- Full-Width Procedural Waves Canvas -->
+      <canvas id="waterCanvas" class="water-canvas"></canvas>
 
+      <!-- Floating Naval Vessel (Modeled Directly after Logo) -->
+      <div class="boat-wrapper" id="boatWrapper">
+        <svg class="boat-svg" viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0a2d52" />
+              <stop offset="50%" stop-color="#144b82" />
+              <stop offset="100%" stop-color="#0e3661" />
+            </linearGradient>
+
+            <linearGradient id="cabinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#0e3a6c" />
+              <stop offset="65%" stop-color="#0094d4" />
+              <stop offset="100%" stop-color="#ffffff" />
+            </linearGradient>
+
+            <linearGradient id="cyanStrake" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00a3e0" />
+              <stop offset="100%" stop-color="#40c4ff" />
+            </linearGradient>
+
+            <linearGradient id="orangeStrake" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f37920" />
+              <stop offset="100%" stop-color="#fba04b" />
+            </linearGradient>
+          </defs>
+
+          <!-- Hull Keel & Shadow -->
+          <path d="M 28,126 C 75,127 150,126 230,123 L 326,76 C 300,90 260,116 215,124 L 28,126 Z" 
+                fill="#082240" />
+
+          <!-- Main Hull -->
+          <path d="M 40,118 L 190,116 L 315,74 C 290,82 250,96 170,104 L 40,118 Z" 
+                fill="url(#hullGrad)" />
+
+          <!-- Cyan Speed Strake (From Logo) -->
+          <path d="M 55,113 C 110,111 200,103 275,82 L 315,74 C 240,93 140,105 55,113 Z" 
+                fill="url(#cyanStrake)" />
+
+          <!-- Orange Accent Strake (From Logo) -->
+          <path d="M 75,120 C 130,118 195,114 250,99 L 245,102 C 185,116 120,121 75,120 Z" 
+                fill="url(#orangeStrake)" />
+
+          <!-- Superstructure / Wheelhouse Bridge -->
+          <path d="M 115,100 L 138,82 L 182,78 L 225,58 C 245,50 262,56 266,62 L 242,75 L 180,84 L 125,98 Z" 
+                fill="url(#cabinGrad)" stroke="#ffffff" stroke-width="0.8" />
+
+          <!-- Bridge Windows -->
+          <polygon points="144,82 178,79 218,63 246,60 238,68 180,78 142,85" fill="#082342" stroke="#00b4d8" stroke-width="1" />
+
+          <!-- Radar Mast -->
+          <line x1="175" y1="78" x2="175" y2="46" stroke="#0a2d52" stroke-width="2" stroke-linecap="round" />
+          <line x1="168" y1="54" x2="182" y2="54" stroke="#f37920" stroke-width="1.8" />
+          <circle cx="175" cy="46" r="2.2" fill="#00a3e0" />
+
+          <!-- Blinking Navigational Lights -->
+          <circle cx="316" cy="74" r="3" fill="#00b074" class="boat-light" />
+          <circle cx="175" cy="44" r="2.5" fill="#f37920" class="boat-light" />
+        </svg>
+      </div>
     </div>
-  </main>
+
+    <!-- Clean Footer -->
+    <footer class="page-footer">
+      <p>&copy; <span id="year">2026</span> Jayanth Marine Services. All rights reserved.</p>
+    </footer>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
